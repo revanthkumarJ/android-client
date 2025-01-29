@@ -10,6 +10,7 @@
 package com.mifos.core.network
 
 import com.google.gson.GsonBuilder
+import com.mifos.core.datastore.PrefManager
 import com.mifos.core.model.getInstanceUrl
 import com.mifos.core.network.services.CenterService
 import com.mifos.core.network.services.ChargeService
@@ -39,7 +40,7 @@ import javax.inject.Inject
 /**
  * @author fomenkoo
  */
-class BaseApiManager @Inject constructor(private val prefManager: com.mifos.core.datastore.PrefManager) {
+class BaseApiManager @Inject constructor(private val prefManager: PrefManager) {
 
     init {
         createService(prefManager)
@@ -158,7 +159,7 @@ class BaseApiManager @Inject constructor(private val prefManager: com.mifos.core
             return mRetrofit!!.create(clazz)
         }
 
-        fun createService(prefManager: com.mifos.core.datastore.PrefManager) {
+        fun createService(prefManager: PrefManager) {
             val gson = GsonBuilder()
                 .registerTypeAdapter(Date::class.java, JsonDateSerializer()).create()
             mRetrofit = Retrofit.Builder()

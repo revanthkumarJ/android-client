@@ -9,6 +9,7 @@
  */
 package com.mifos.core.network
 
+import com.mifos.core.datastore.PrefManager
 import okhttp3.Interceptor
 import okhttp3.Response
 import java.io.IOException
@@ -16,7 +17,7 @@ import java.io.IOException
 /**
  * @author fomenkoo
  */
-class MifosInterceptor(private val prefManager: com.mifos.core.datastore.PrefManager) : Interceptor {
+class MifosInterceptor(private val prefManager: PrefManager) : Interceptor {
 
     @Throws(IOException::class)
     override fun intercept(chain: Interceptor.Chain): Response {

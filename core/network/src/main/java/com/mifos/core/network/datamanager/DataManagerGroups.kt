@@ -11,6 +11,7 @@ package com.mifos.core.network.datamanager
 
 import com.mifos.core.databasehelper.DatabaseHelperClient
 import com.mifos.core.databasehelper.DatabaseHelperGroups
+import com.mifos.core.datastore.PrefManager
 import com.mifos.core.entity.group.Group
 import com.mifos.core.entity.group.GroupPayload
 import com.mifos.core.network.BaseApiManager
@@ -37,7 +38,7 @@ class DataManagerGroups @Inject constructor(
     private val mDatabaseHelperGroups: DatabaseHelperGroups,
     private val mDatabaseHelperClient: DatabaseHelperClient,
     private val baseApiManager: org.mifos.core.apimanager.BaseApiManager,
-    private val prefManager: com.mifos.core.datastore.PrefManager,
+    private val prefManager: PrefManager,
 ) {
     /**
      * This Method sending the Request to REST API if UserStatus is 0 and

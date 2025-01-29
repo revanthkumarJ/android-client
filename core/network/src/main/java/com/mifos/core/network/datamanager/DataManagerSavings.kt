@@ -10,6 +10,7 @@
 package com.mifos.core.network.datamanager
 
 import com.mifos.core.databasehelper.DatabaseHelperSavings
+import com.mifos.core.datastore.PrefManager
 import com.mifos.core.entity.accounts.savings.SavingsAccountTransactionRequest
 import com.mifos.core.entity.accounts.savings.SavingsAccountWithAssociations
 import com.mifos.core.entity.templates.savings.SavingsAccountTransactionTemplate
@@ -32,7 +33,7 @@ import javax.inject.Singleton
 class DataManagerSavings @Inject constructor(
     val mBaseApiManager: BaseApiManager,
     val mDatabaseHelperSavings: DatabaseHelperSavings,
-    private val prefManager: com.mifos.core.datastore.PrefManager,
+    private val prefManager: PrefManager,
 ) {
     /**
      * This Method Make the Request to the REST API
